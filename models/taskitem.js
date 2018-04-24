@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.TEXT
   }, {});
   TaskItem.associate = function(models) {
-    models.TemplateTask.hasMany(TaskItem)
+    models.TemplateTask.hasMany(TaskItem, {foreignKey: {allowNull: false, onDelete: 'CASCADE'}})
   };
   return TaskItem;
 };
