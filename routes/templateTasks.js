@@ -17,10 +17,8 @@ router.post('/', function(req, res, next) {
 });
 
 router.get('/:template_id', function(req, res, next) {
-  console.log('doing this')
   return models.TemplateTask.findById(req.params.template_id)
     .then((templateTask) => {
-      console.log('getting task:', templateTask)
       if (!templateTask) {
         return res.status(404).send;
       }
