@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.TEXT
   }, {});
   TaskItem.associate = function(models) {
-    // associations can be defined here
+    models.TemplateTask.hasMany(TaskItem)
   };
   return TaskItem;
 };

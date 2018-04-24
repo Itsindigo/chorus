@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1 Task Lists
+  ul
+    for task in tasks
+      li= task.name
+    else
+      li no tasks available

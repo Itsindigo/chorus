@@ -6,6 +6,7 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const templateTaskRouter = require('./routes/templateTasks');
+const taskRouter = require('./routes/taskItems');
 
 var app = express();
 
@@ -20,6 +21,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/api/task', taskRouter);
 app.use('/api/task-list', templateTaskRouter);
 
 // catch 404 and forward to error handler
